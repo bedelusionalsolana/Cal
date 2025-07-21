@@ -1,5 +1,5 @@
 from telegram import Update
-from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTypes
+from telegram.ext import ApplicationBuilder, MessageHandler, ContextTypes, filters
 
 TARGET_USERNAME = "Cal887"
 
@@ -25,9 +25,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 if __name__ == "__main__":
     import os
-    from telegram.ext import ApplicationBuilder
-
-    TOKEN = os.environ["BOT_TOKEN"]
-    app = ApplicationBuilder().token(TOKEN).build()
+    token = os.getenv("BOT_TOKEN")
+    app = ApplicationBuilder().token(token).build()
     app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), handle_message))
     app.run_polling()
