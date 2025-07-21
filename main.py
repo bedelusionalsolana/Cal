@@ -1,7 +1,7 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, ContextTypes, filters
 
-TARGET_USERNAME = "Cal887"
+TARGET_USERNAME = "@juju4563juju"
 
 def mock_text(text):
     result = ""
